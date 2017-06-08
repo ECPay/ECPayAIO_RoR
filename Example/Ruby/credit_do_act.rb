@@ -13,7 +13,7 @@ class YOURCONTROLLER < ApplicationController
     }
 
 
-    create = ECpayPayment::ECpayExecRefundAndGrant.new
+    query = ECpayPayment::ECpayExecRefundAndGrant.new
     res = query.credit_do_act(base_param)
     render :text => res
   end

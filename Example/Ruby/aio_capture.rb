@@ -16,6 +16,6 @@ class YOURCONTROLLER < ApplicationController
 
 
     create = ECpayPayment::ECpayExecRefundAndGrant.new
-    res = query.aio_capture(base_param)
+    res = create.aio_capture(base_param)
     render :text => res
   end

@@ -10,7 +10,7 @@ class YOURCONTROLLER < ApplicationController
     }
 
 
-    create = ECpayPayment::ECpayQueryClient.new
+    query = ECpayPayment::ECpayQueryClient.new
     res = query.query_trade_info(base_param)
     render :text => res
   end
