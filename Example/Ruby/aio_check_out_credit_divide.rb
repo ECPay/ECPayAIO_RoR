@@ -55,7 +55,7 @@ class YOURCONTROLLER < ApplicationController
 =end      
     }
 
-    inst = 12 #分期期數
+    inst = '12' #分期期數
     amt = 100 #分期總金額
 
     create = ECpayPayment::ECpayPaymentClient.new
