@@ -56,7 +56,7 @@ class YOURCONTROLLER < ApplicationController
     }
 
     create = ECpayPayment::ECpayPaymentClient.new
-    htm = create.aio_check_out_credit_onetime(params: base_param, invoice: inv_params)
+    htm = create.aio_check_out_all(params: base_param, invoice: inv_params)
 
     render :text => htm
   end

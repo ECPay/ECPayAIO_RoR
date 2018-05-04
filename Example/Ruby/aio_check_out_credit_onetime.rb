@@ -18,12 +18,11 @@ class YOURCONTROLLER < ApplicationController
       #'ClientBackURL' => 'https://www.google.com',
       #'ItemURL' => 'http://item.test.tw',
       #'Remark' => '交易備註',
-      #'HoldTradeAMT' => '1',
       #'StoreID' => '',
-	  #'CustomField1' => '',
-	  #'CustomField2' => '',
-	  #'CustomField3' => '',
-	  #'CustomField4' => ''
+	    #'CustomField1' => '',
+	    #'CustomField2' => '',
+	    #'CustomField3' => '',
+	    #'CustomField4' => ''
     }
 
 
@@ -56,7 +55,7 @@ class YOURCONTROLLER < ApplicationController
     }
 
     create = ECpayPayment::ECpayPaymentClient.new
-    htm = create.aio_check_out_all(params: base_param, invoice: inv_params)
+    htm = create.aio_check_out_credit_onetime(params: base_param, invoice: inv_params)
 
     render :text => htm
   end

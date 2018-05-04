@@ -57,7 +57,7 @@ class YOURCONTROLLER < ApplicationController
 
     pay_info_url = 'http://192.168.0.1'
     exp = '7'
-    cli_redir_url 'http://192.168.0.1/payment_result'
+    cli_redir_url = 'http://192.168.0.1/payment_result'
 
     create = ECpayPayment::ECpayPaymentClient.new
     htm = create.aio_check_out_atm(params: base_param, url_return_payinfo: pay_info_url, exp_period: exp, client_redirect:cli_redir_url, invoice:inv_params)
