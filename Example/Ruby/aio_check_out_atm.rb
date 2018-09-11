@@ -1,13 +1,10 @@
 require 'ecpay_payment'
 
-class YOURCONTROLLER < ApplicationController
-
-  def AioChkATM
     ## 參數值為[PLEASE MODIFY]者，請在每次測試時給予獨特值
     ## 若要測試非必帶參數請將base_param內註解的參數依需求取消註解 ##
     base_param = {
-      'MerchantTradeNo' => 'PLEASE MODIFY',  #請帶20碼uid, ex: f0a0d7e9fae1bb72bc93
-      'MerchantTradeDate' => 'PLEASE MODIFY', # ex: 2017/02/13 15:45:30
+      'MerchantTradeNo' => 'f0a0fae1MODIFY',  #請帶20碼uid, ex: f0a0d7e9fae1bb72bc93
+      'MerchantTradeDate' => '2018/08/27 09:26:30', # ex: 2017/02/13 15:45:30
       'TotalAmount' => '100',
       'TradeDesc' => '測試交易描述',
       'ItemName' => '測試商品等',
@@ -18,7 +15,6 @@ class YOURCONTROLLER < ApplicationController
       #'ClientBackURL' => 'https://www.google.com',
       #'ItemURL' => 'http://item.test.tw',
       #'Remark' => '交易備註',
-      #'HoldTradeAMT' => '1',
       #'StoreID' => '',
 	  #'CustomField1' => '',
 	  #'CustomField2' => '',
@@ -61,5 +57,4 @@ class YOURCONTROLLER < ApplicationController
 
     create = ECpayPayment::ECpayPaymentClient.new
     htm = create.aio_check_out_atm(params: base_param, url_return_payinfo: pay_info_url, exp_period: exp, client_redirect:cli_redir_url, invoice:inv_params)
-    render :text => htm
-  end
+puts htm
