@@ -4,8 +4,8 @@ require 'ecpay_payment'
     ## 參數值為[PLEASE MODIFY]者，請在每次測試時給予獨特值
     ## 若要測試非必帶參數請將base_param內註解的參數依需求取消註解 ##
     base_param = {
-      'MerchantTradeNo' => 'PLEASf0a0d7e9fae1',  #請帶20碼uid, ex: f0a0d7e9fae1bb72bc93
-      'MerchantTradeDate' => '2017/02/13 15:45:30', # ex: 2017/02/13 15:45:30
+      'MerchantTradeNo' => 'PLEASew7e9fae1',  #請帶20碼uid, ex: f0a0d7e9fae1bb72bc93
+      'MerchantTradeDate' => '2018/08/28 10:01:10', # ex: 2017/02/13 15:45:30
       'TotalAmount' => '100',
       'TradeDesc' => '測試交易描述',
       'ItemName' => '測試商品等',
@@ -54,14 +54,14 @@ require 'ecpay_payment'
     }
 
     cvs_params = {
-      'StoreExpireDate' => '7',
+      'StoreExpireDate' => '1080',
       'Desc_1' => '超商螢幕描述A',
       'Desc_2' => '超商螢幕描述B',
       'Desc_3' => '超商螢幕描述C',
       'Desc_4' => '超商螢幕描述D',
       'PaymentInfoURL' => 'http://192.168.0.1'
     }
-    client_redirect_url = 'http://192.168.0.1/payment_result'
+    client_redirect_url = ''
 
     create = ECpayPayment::ECpayPaymentClient.new
     htm = create.aio_check_out_cvs(cvs_info: cvs_params, params: base_param, invoice: inv_params, client_redirect_url: client_redirect_url)
