@@ -3,9 +3,9 @@ require 'ecpay_payment'
     ## 參數值為[PLEASE MODIFY]者，請在每次測試時給予獨特值
     ## 若要測試非必帶參數請將base_param內註解的參數依需求取消註解 ##
     base_param = {
-      'MerchantTradeNo' => 'f0a0d7e9fasas',  #請帶20碼uid, ex: f0a0d7e9fae1bb72bc93
+      'MerchantTradeNo' => 'f0a0d7e9fasd44asas',  #請帶20碼uid, ex: f0a0d7e9fae1bb72bc93
       'MerchantTradeDate' => '2017/02/13 15:45:30', # ex: 2017/02/13 15:45:30
-      'TotalAmount' => '100',
+      'TotalAmount' => '20000',
       'TradeDesc' => '測試交易描述',
       'ItemName' => '測試商品等',
       'ReturnURL' => 'http://192.168.0.1'
@@ -52,8 +52,7 @@ require 'ecpay_payment'
     }
 
     inst = '12' #分期期數
-    amt = 100 #分期總金額
 
     create = ECpayPayment::ECpayPaymentClient.new
-    htm = create.aio_check_out_credit_divide(params: base_param, invoice: inv_params, installment: inst, amount:amt)
+    htm = create.aio_check_out_credit_divide(params: base_param, invoice: inv_params, installment: inst)
     puts htm
